@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- 聊天气泡背景 -->
+  <rect x="2" y="4" width="28" height="22" rx="6" fill="#4F46E5"/>
+  <!-- 气泡尾巴 -->
+  <path d="M8 26 L6 32 L14 26" fill="#4F46E5"/>
+  <!-- 三个消息点 -->
+  <circle cx="10" cy="15" r="2" fill="white"/>
+  <circle cx="16" cy="15" r="2" fill="white"/>
+  <circle cx="22" cy="15" r="2" fill="white"/>
+  <!-- AI 闪光标识 -->
+  <path d="M30 8 L32 4 L34 8 L38 10 L34 12 L32 16 L30 12 L26 10 Z" fill="#10B981"/>
+</svg>

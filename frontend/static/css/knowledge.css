@@ -1,0 +1,286 @@
+/* ============================================
+   知识库样式
+   ============================================ */
+
+/* 知识库布局 */
+.knowledge-layout {
+  display: flex;
+  gap: var(--space-5);
+  height: calc(100vh - var(--header-height) - var(--space-12));
+}
+
+/* 知识库分类侧栏 */
+.knowledge-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.knowledge-sidebar-header {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.knowledge-sidebar-header h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.knowledge-categories {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.knowledge-category-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.knowledge-category-item:hover {
+  background: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.knowledge-category-item.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.knowledge-category-count {
+  margin-left: auto;
+  font-size: var(--text-xs);
+  color: var(--gray-400);
+  background: var(--gray-100);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.knowledge-category-item.active .knowledge-category-count {
+  background: rgba(79, 70, 229, 0.15);
+  color: var(--primary);
+}
+
+/* 知识库主内容 */
+.knowledge-main {
+  flex: 1;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.knowledge-main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.knowledge-main-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.knowledge-search {
+  position: relative;
+  width: 280px;
+}
+
+.knowledge-search input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3) var(--space-2) 36px;
+  background: var(--gray-100);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+}
+
+.knowledge-search .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+}
+
+/* FAQ 列表 */
+.knowledge-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.faq-item {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.faq-item:hover {
+  background: var(--gray-50);
+}
+
+.faq-item.active {
+  background: var(--primary-bg);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.faq-question-text {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gray-800);
+  flex: 1;
+}
+
+.faq-question-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.faq-expand-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gray-400);
+  transition: transform var(--transition-fast);
+}
+
+.faq-item.active .faq-expand-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-200);
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* FAQ 编辑器 */
+.faq-editor {
+  padding: var(--space-5);
+  border-top: 1px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.faq-editor-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.faq-editor-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  justify-content: flex-end;
+}
+
+/* 知识库统计 */
+.knowledge-stats {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.knowledge-stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+}
+
+.knowledge-stat-value {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* 空状态 */
+.knowledge-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+  padding: var(--space-12);
+}
+
+.knowledge-empty svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-3);
+}
+
+.knowledge-empty p {
+  font-size: var(--text-base);
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .knowledge-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .knowledge-sidebar {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .knowledge-categories {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--space-1);
+    padding: var(--space-2);
+  }
+
+  .knowledge-category-item {
+    white-space: nowrap;
+  }
+}

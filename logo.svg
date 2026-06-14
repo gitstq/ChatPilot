@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 主色渐变 - 聊天气泡 -->
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+    <!-- 辅色渐变 - AI闪电 -->
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34D399;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+    <!-- 背景圆角矩形阴影 -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#4F46E5" flood-opacity="0.25"/>
+    </filter>
+    <!-- AI光晕 -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="256" height="256" rx="48" ry="48" fill="#F8FAFC"/>
+
+  <!-- 主聊天气泡 -->
+  <g filter="url(#shadow)">
+    <path d="
+      M 56 72
+      L 200 72
+      Q 216 72 216 88
+      L 216 152
+      Q 216 168 200 168
+      L 120 168
+      L 88 200
+      L 96 168
+      L 56 168
+      Q 40 168 40 152
+      L 40 88
+      Q 40 72 56 72
+      Z
+    " fill="url(#bubbleGrad)"/>
+  </g>
+
+  <!-- 聊天气泡内的三条消息线 -->
+  <rect x="68" y="92" width="80" height="8" rx="4" fill="white" opacity="0.9"/>
+  <rect x="68" y="108" width="60" height="8" rx="4" fill="white" opacity="0.7"/>
+  <rect x="68" y="124" width="44" height="8" rx="4" fill="white" opacity="0.5"/>
+
+  <!-- AI闪电/星星标识 -->
+  <g filter="url(#glow)" transform="translate(168, 108)">
+    <!-- 外圈光晕 -->
+    <circle cx="0" cy="0" r="36" fill="#10B981" opacity="0.12"/>
+    <!-- 内圈 -->
+    <circle cx="0" cy="0" r="28" fill="url(#aiGrad)"/>
+    <!-- 闪电符号 -->
+    <path d="
+      M -4 -14
+      L 6 -14
+      L 2 -2
+      L 12 -2
+      L -4 16
+      L 0 4
+      L -10 4
+      Z
+    " fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- 底部小装饰点 -->
+  <circle cx="80" cy="224" r="6" fill="#4F46E5" opacity="0.2"/>
+  <circle cx="128" cy="232" r="4" fill="#10B981" opacity="0.2"/>
+  <circle cx="176" cy="224" r="6" fill="#4F46E5" opacity="0.15"/>
+</svg>

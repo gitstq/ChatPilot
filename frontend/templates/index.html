@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChatPilot - 轻量级开源智能客服支持平台">
+  <title>ChatPilot - 智能客服管理后台</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="static/img/logo.svg">
+
+  <!-- 全局样式 -->
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/dashboard.css">
+  <link rel="stylesheet" href="static/css/conversations.css">
+  <link rel="stylesheet" href="static/css/chat.css">
+  <link rel="stylesheet" href="static/css/tickets.css">
+  <link rel="stylesheet" href="static/css/customers.css">
+  <link rel="stylesheet" href="static/css/knowledge.css">
+  <link rel="stylesheet" href="static/css/settings.css">
+</head>
+<body>
+  <!-- ==================== 应用布局 ==================== -->
+  <div class="app-layout">
+
+    <!-- 顶部导航栏 -->
+    <header class="top-header">
+      <!-- 由 app.js 动态渲染 -->
+    </header>
+
+    <!-- 左侧边栏 -->
+    <aside class="sidebar">
+      <!-- 由 app.js 动态渲染 -->
+    </aside>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- 页面视图容器 -->
+        <div id="view-dashboard" class="page-view"></div>
+        <div id="view-conversations" class="page-view"></div>
+        <div id="view-tickets" class="page-view"></div>
+        <div id="view-customers" class="page-view"></div>
+        <div id="view-knowledge" class="page-view"></div>
+        <div id="view-settings" class="page-view"></div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Toast 通知容器 -->
+  <div class="toast-container"></div>
+
+  <!-- ==================== JavaScript ==================== -->
+  <!-- 按依赖顺序加载 -->
+  <script src="static/js/utils.js"></script>
+  <script src="static/js/api.js"></script>
+  <script src="static/js/router.js"></script>
+  <script src="static/js/websocket.js"></script>
+  <script src="static/js/notifications.js"></script>
+  <script src="static/js/dashboard.js"></script>
+  <script src="static/js/conversations.js"></script>
+  <script src="static/js/chat.js"></script>
+  <script src="static/js/tickets.js"></script>
+  <script src="static/js/customers.js"></script>
+  <script src="static/js/knowledge.js"></script>
+  <script src="static/js/settings.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>

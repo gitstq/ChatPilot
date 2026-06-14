@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  chatpilot:
+    build: .
+    container_name: chatpilot
+    ports:
+      - "8000:8000"
+    volumes:
+      - chatpilot-data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///data/chatpilot.db
+      - SECRET_KEY=change-me-in-production
+      - AI_PROVIDER=ollama
+      - AI_MODEL=qwen2.5:7b
+    restart: unless-stopped
+volumes:
+  chatpilot-data:

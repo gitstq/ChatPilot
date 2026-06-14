@@ -1,0 +1,333 @@
+/* ============================================
+   工单样式
+   ============================================ */
+
+/* 工单页面布局 */
+.tickets-layout {
+  display: flex;
+  gap: var(--space-5);
+  height: calc(100vh - var(--header-height) - var(--space-12));
+}
+
+/* 工单列表 */
+.tickets-list-panel {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+
+.tickets-list-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tickets-list-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+/* 工单过滤 */
+.ticket-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.ticket-filter-btn {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border: 1px solid var(--gray-200);
+  color: var(--gray-600);
+  background: #fff;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.ticket-filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ticket-filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* 工单列表 */
+.tickets-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.ticket-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.ticket-item:hover {
+  background: var(--gray-50);
+}
+
+.ticket-item.active {
+  background: var(--primary-bg);
+  border-left: 3px solid var(--primary);
+}
+
+.ticket-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.ticket-id {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.ticket-title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gray-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.ticket-item-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+}
+
+.ticket-priority {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.ticket-priority-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.ticket-priority-dot.urgent {
+  background: var(--danger);
+}
+
+.ticket-priority-dot.high {
+  background: var(--warning);
+}
+
+.ticket-priority-dot.medium {
+  background: var(--info);
+}
+
+.ticket-priority-dot.low {
+  background: var(--gray-400);
+}
+
+/* 工单详情面板 */
+.ticket-detail-panel {
+  flex: 1;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ticket-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.ticket-detail-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--space-2);
+}
+
+.ticket-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+}
+
+.ticket-detail-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* 工单信息区 */
+.ticket-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.ticket-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ticket-info-label {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.ticket-info-value {
+  font-size: var(--text-sm);
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+/* 工单描述 */
+.ticket-description {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.ticket-description h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.ticket-description p {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* 工单回复区 */
+.ticket-replies {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5);
+}
+
+.ticket-reply {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.ticket-reply:last-child {
+  border-bottom: none;
+}
+
+.ticket-reply-content {
+  flex: 1;
+}
+
+.ticket-reply-author {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gray-800);
+  margin-bottom: var(--space-1);
+}
+
+.ticket-reply-text {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.ticket-reply-time {
+  font-size: var(--text-xs);
+  color: var(--gray-400);
+  margin-top: var(--space-2);
+}
+
+/* 工单回复输入 */
+.ticket-reply-input {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+.ticket-reply-input textarea {
+  flex: 1;
+  min-height: 60px;
+  border-radius: var(--radius-md);
+}
+
+/* 工单空状态 */
+.ticket-detail-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.ticket-detail-empty svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-3);
+}
+
+.ticket-detail-empty p {
+  font-size: var(--text-base);
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .tickets-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tickets-list-panel {
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .ticket-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ticket-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

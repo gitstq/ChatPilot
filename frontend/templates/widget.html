@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatPilot Widget</title>
+  <link rel="icon" type="image/svg+xml" href="../static/img/logo.svg">
+  <link rel="stylesheet" href="../static/css/widget.css">
+  <style>
+    /* Widget 独立预览页面的基础样式 */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #F3F4F6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .demo-page {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    .demo-page h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .demo-page p {
+      font-size: 16px;
+      color: #6B7280;
+      margin-bottom: 40px;
+    }
+    .demo-content {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      min-height: 400px;
+    }
+    .demo-content h2 {
+      font-size: 20px;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+    .demo-content p {
+      font-size: 14px;
+      color: #9CA3AF;
+      margin-bottom: 0;
+    }
+    .embed-code {
+      margin-top: 32px;
+      background: #1F2937;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    .embed-code h3 {
+      font-size: 14px;
+      color: #9CA3AF;
+      margin-bottom: 12px;
+    }
+    .embed-code pre {
+      color: #10B981;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    .embed-code .comment {
+      color: #6B7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-page">
+    <h1>ChatPilot Widget</h1>
+    <p>一行代码嵌入智能客服到你的网站</p>
+
+    <div class="demo-content">
+      <h2>页面内容示例</h2>
+      <p>这是一个演示页面，右下角的聊天按钮即为嵌入的 ChatPilot Widget。</p>
+      <p>点击按钮打开聊天窗口，体验实时对话功能。</p>
+    </div>
+
+    <div class="embed-code">
+      <h3>嵌入代码（复制到你的网站 HTML 中）：</h3>
+      <pre><span class="comment">&lt;!-- ChatPilot Widget --&gt;</span>
+&lt;script src="widget-embed.js"<span class="comment"></span>
+  data-color="#4F46E5"
+  data-position="right"
+  data-welcome="您好！有什么可以帮助您的吗？"
+  data-title="智能客服"&gt;
+&lt;/script&gt;</pre>
+    </div>
+  </div>
+
+  <!-- Widget 样式 -->
+  <link rel="stylesheet" href="../static/css/widget.css">
+
+  <!-- Widget 脚本 -->
+  <script src="../widget-embed.js"></script>
+</body>
+</html>

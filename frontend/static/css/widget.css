@@ -1,0 +1,434 @@
+/* ============================================
+   嵌入式 Widget 样式
+   ============================================ */
+
+/* Widget 浮动按钮 */
+.chatpilot-widget-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--widget-color, #4F46E5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 99999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.chatpilot-widget-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chatpilot-widget-btn svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.chatpilot-widget-btn.open svg {
+  transform: rotate(90deg);
+}
+
+/* 未读消息数 */
+.chatpilot-widget-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  background: #EF4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 2px solid #fff;
+  line-height: 1;
+}
+
+.chatpilot-widget-badge:empty {
+  display: none;
+}
+
+/* Widget 聊天窗口 */
+.chatpilot-widget-window {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  width: 380px;
+  height: 520px;
+  max-height: calc(100vh - 120px);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.chatpilot-widget-window.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* 位置：左侧 */
+.chatpilot-widget-window.position-left {
+  right: auto;
+  left: 24px;
+}
+
+.chatpilot-widget-btn.position-left {
+  right: auto;
+  left: 24px;
+}
+
+/* Widget 头部 */
+.chatpilot-widget-header {
+  padding: 16px 20px;
+  background: var(--widget-color, #4F46E5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.chatpilot-widget-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatpilot-widget-header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatpilot-widget-header-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.chatpilot-widget-header-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chatpilot-widget-header-text p {
+  font-size: 12px;
+  opacity: 0.8;
+  margin: 2px 0 0;
+}
+
+.chatpilot-widget-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.chatpilot-widget-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Widget 消息区域 */
+.chatpilot-widget-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #F9FAFB;
+}
+
+.chatpilot-widget-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chatpilot-widget-messages::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 2px;
+}
+
+/* Widget 消息气泡 */
+.chatpilot-msg {
+  max-width: 80%;
+  animation: cpMsgFadeIn 0.2s ease;
+}
+
+.chatpilot-msg.bot {
+  align-self: flex-start;
+}
+
+.chatpilot-msg.user {
+  align-self: flex-end;
+}
+
+.chatpilot-msg-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.chatpilot-msg.bot .chatpilot-msg-bubble {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #E5E7EB;
+  border-bottom-left-radius: 4px;
+}
+
+.chatpilot-msg.user .chatpilot-msg-bubble {
+  background: var(--widget-color, #4F46E5);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.chatpilot-msg-time {
+  font-size: 11px;
+  color: #9CA3AF;
+  margin-top: 4px;
+  padding: 0 4px;
+}
+
+.chatpilot-msg.user .chatpilot-msg-time {
+  text-align: right;
+}
+
+@keyframes cpMsgFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 欢迎消息 */
+.chatpilot-welcome {
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.chatpilot-welcome-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--widget-color, #4F46E5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.chatpilot-welcome-avatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.chatpilot-welcome-text {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* 快捷回复 */
+.chatpilot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 16px 8px;
+}
+
+.chatpilot-quick-reply {
+  padding: 6px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #4B5563;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.chatpilot-quick-reply:hover {
+  border-color: var(--widget-color, #4F46E5);
+  color: var(--widget-color, #4F46E5);
+  background: rgba(79, 70, 229, 0.05);
+}
+
+/* 正在输入 */
+.chatpilot-typing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.chatpilot-typing-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.chatpilot-typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  animation: cpTyping 1.4s infinite;
+}
+
+.chatpilot-typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.chatpilot-typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes cpTyping {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* Widget 输入区域 */
+.chatpilot-widget-input {
+  padding: 12px 16px;
+  border-top: 1px solid #E5E7EB;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.chatpilot-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F3F4F6;
+  border-radius: 24px;
+  padding: 4px 4px 4px 16px;
+  transition: box-shadow 0.2s;
+}
+
+.chatpilot-input-wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--widget-color, #4F46E5);
+  background: #fff;
+}
+
+.chatpilot-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 8px 0;
+  outline: none;
+  color: #374151;
+}
+
+.chatpilot-input-wrapper input::placeholder {
+  color: #9CA3AF;
+}
+
+.chatpilot-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--widget-color, #4F46E5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.chatpilot-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chatpilot-send-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Widget 底部 */
+.chatpilot-widget-footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #D1D5DB;
+}
+
+.chatpilot-widget-footer a {
+  color: #9CA3AF;
+  text-decoration: none;
+}
+
+.chatpilot-widget-footer a:hover {
+  color: #6B7280;
+}
+
+/* 响应式 */
+@media (max-width: 480px) {
+  .chatpilot-widget-window {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 80px);
+    bottom: 8px;
+    right: 8px;
+    border-radius: 12px;
+  }
+
+  .chatpilot-widget-btn {
+    bottom: 16px;
+    right: 16px;
+  }
+}
